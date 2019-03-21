@@ -35,7 +35,14 @@ function EditTask(props) {
                             </td>
                             <td><input id="descBoc" defaultValue={currTask.desc} /></td>
                             <td><input id="hoursBox" defaultValue={currTask.time_hours} /></td>
-                            <td><input id="minutesBox" step="15" type="number" defaultValue={currTask.time_minutes} /></td>
+                            <td>
+                                <select id="minutesBox" defaultValue={currTask.time_minutes}>
+                                    <option value="0">0</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </td>
                             <td><input id="completedBox" type="checkbox" defaultChecked={currTask.completed} /></td>
                         </tr>
                     </tbody>

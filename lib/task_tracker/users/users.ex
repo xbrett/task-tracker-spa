@@ -102,8 +102,8 @@ defmodule TaskTracker.Users do
 
       iex> change_user(user)
       %Ecto.Changeset{source: %User{}}
-
   """
+
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
@@ -119,6 +119,11 @@ defmodule TaskTracker.Users do
       {:ok, user} -> user
       _else       -> nil
     end
+  end
+
+  def authenticate_user(email, password) do
+    Repo.get_by(User, email: email)
+    |> Comeonin.Argon2.check_pass(password)
   end
 
 end

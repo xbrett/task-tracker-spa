@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import api from './api';
 import EditTask from './edit_task'
 import NewTask from './new_task'
+import ShowTask from './show_task'
 
 export default function root_init(node, store) {
   ReactDOM.render(
@@ -38,6 +39,9 @@ class Root extends React.Component {
           } />
           <Route path="/user" exact={true} render={() =>
             <UserList />
+          } />
+          <Route path="/showtask" exact={true} render={() =>
+            <ShowTask />
           } />
           <Route path="/edittask" exact={true} render={() =>
             <EditTask />

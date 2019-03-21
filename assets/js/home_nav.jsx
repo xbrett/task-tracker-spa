@@ -1,4 +1,3 @@
-// Home jsx
 import React from 'react';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';

@@ -25,6 +25,7 @@ defmodule TaskTrackerWeb.Router do
     resources "/users", UserController, except: [:new, :edit]
     resources "/tasks", TaskController, except: [:new, :edit]
     resources "/sessions", SessionController, only: [:create]
+    post "/auth", AuthController, :authenticate
 
     end
 

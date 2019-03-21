@@ -26,10 +26,10 @@ function Header(props) {
             <li class="nav-item active">
                 <h3><Link to={"/"} className="nav-link">Task Tracker</Link></h3>
             </li>
-            <li class="nav-item">
+            <li class="nav-item nav-link">
                 <Link to={"/tasks"} onClick={() => {api.fetch_tasks()}} className="nav-link">Tasks</Link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item nav-link">
                 <p><Link to={"/user"} onClick={api.fetch_users()} className="nav-link">Users</Link></p>
             </li>
           </ul>

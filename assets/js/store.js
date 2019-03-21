@@ -1,5 +1,3 @@
-// Used Nat Tuck's Lecture Notes as Reference:
-// http://www.ccs.neu.edu/home/ntuck/courses/2018/09/cs4550/notes/18-redux/notes.html
 import { createStore, combineReducers } from 'redux';
 import deepFreeze from 'deep-freeze';
 

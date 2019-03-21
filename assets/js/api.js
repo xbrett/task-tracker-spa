@@ -47,7 +47,8 @@ class Server {
                     type: 'NEW_SESSION',
                     data: resp.data
                 })
-            }
+            },
+            error: () => {alert('Invalid Email or Password') }
         });
     }
 
@@ -159,6 +160,21 @@ class Server {
     }
 
     editTask(id) {
+        $.ajax("/api/v1/tasks/" + id, {
+            method: "get",
+            dataType: "json",
+            contentType: "application/json; charset=UTF-8",
+            data: "",
+            success: (task) => {
+                store.dispatch({
+                    type: 'UPDATE_CURRENT_TASK',
+                    data: task.data
+                })
+            }
+        });
+    }
+
+    showTask(id) {
         $.ajax("/api/v1/tasks/" + id, {
             method: "get",
             dataType: "json",

@@ -1,4 +1,3 @@
-// Task jsx
 import React from 'react';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -17,12 +16,8 @@ function TaskList(props) {
         <table className="table table-primary table-hover table-striped">
           <thead>
             <tr>
-              <th hidden={true}>ID</th>
               <th>Title</th>
               <th>Assignee</th>
-              <th>Description</th>
-              <th>Time (hours)</th>
-              <th>Time (min)</th>
               <th>Completed</th>
               <th></th>
               <th></th>
@@ -46,11 +41,9 @@ function Task(props) {
   return <tr>
     <td>{task.title}</td>
     <td>{task.user_assigned}</td>
-    <td>{task.desc}</td>
-    <td>{task.time_hours}</td>
-    <td>{task.time_minutes}</td>
     <td>{task.completed ? "yes" : "no"}</td>
     <td>
+    <Link to={"/showtask"} className="btn btn-primary" onClick={() => { api.showTask(task.id) }} >Show</Link>
     <Link to={"/edittask"} className="btn btn-warning" onClick={() => { api.editTask(task.id) }} >Edit</Link>
     <Link to={"/tasks"} className="btn btn-danger" onClick={() => { api.deleteTask(task.id) }}>Delete</Link>
     </td>

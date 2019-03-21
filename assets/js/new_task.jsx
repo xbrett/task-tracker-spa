@@ -33,12 +33,19 @@ function NewTask(props) {
                         </td>
                         <td><input id="descBoc" /></td>
                         <td><input id="hoursBox" /></td>
-                        <td><input id="minutesBox" step="15" type="number" /></td>
+                        <td>
+                            <select id="minutesBox" defaultValue={0}>
+                                <option value="0">0</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>
+                        </td>
                         <td><input id="completedBox" type="checkbox" defaultChecked={false} /></td>
                     </tr>
                 </tbody>
             </table>
-            <div><Link to={"/tasks"} className="btn btn-primary"
+            <div><Link to={"/tasks"} className="btn btn-primary btn-lg"
                 onClick={() => { api.newTask() }}>Create Task</Link></div>
         </div>
     </div>;
