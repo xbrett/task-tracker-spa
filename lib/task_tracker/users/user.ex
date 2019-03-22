@@ -7,8 +7,6 @@ defmodule TaskTracker.Users.User do
     field :admin, :boolean, default: false, null: false
     field :email, :string, null: false
     field :password_hash, :string, null: false
-    field :pw_tries, :integer, null: false, default: 0
-    field :pw_last_try, :utc_datetime
 
     has_many :task, TaskTracker.Tasks.Task
 
