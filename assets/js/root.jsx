@@ -30,7 +30,7 @@ class Root extends React.Component {
     return <div>
       <Router>
         <div>
-          <Header root={this} />
+          
           <Route path="/" exact={true} render={() =>
             <Home />
           } />
