@@ -74,6 +74,9 @@ class Server {
             data: text,
             success: (resp) => {
                 this.create_session(email, password)
+            },
+            error: () => {
+                alert('Account already exists with that email');
             }
         });
     }
